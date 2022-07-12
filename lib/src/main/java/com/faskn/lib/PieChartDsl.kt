@@ -20,7 +20,7 @@ data class PieChart(
 
     private fun initScaledArcs() {
         slices.forEachIndexed { i, slice ->
-            val scaledValue = (slice.dataPoint.toFloat() / getSumOfDataPoints()) * 360
+            val scaledValue = (slice.dataPoint / getSumOfDataPoints()) * 360
             slice.scaledValue = scaledValue
             if (i != 0) {
                 slice.arc = Arc(
@@ -86,7 +86,7 @@ class PieChartBuilder {
 
     private fun initScaledArcs() {
         slices.forEachIndexed { i, slice ->
-            val scaledValue = (slice.dataPoint.toFloat() / getSumOfDataPoints()) * 360
+            val scaledValue = (slice.dataPoint / getSumOfDataPoints()) * 360
             slice.scaledValue = scaledValue
             if (i != 0) {
                 slice.arc = Arc(
