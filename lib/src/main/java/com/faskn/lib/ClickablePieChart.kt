@@ -226,9 +226,9 @@ class ClickablePieChart @JvmOverloads constructor(
         val center = slices?.get(index)?.arc?.average()!! + pieChart?.sliceStartPoint?.toDouble()!!
         val halfRadius = rectF!!.centerX()
 
-        var popupText = "${slices?.get(index)!!.dataPoint.toString()} $popupText"
+        var popupText = "${slices?.get(index)!!.taskName.toString()} $popupText"
         if (showPercentage) {
-            popupText = "$popupText (%${slices?.get(index)!!.percentage})"
+            popupText = "$popupText (${slices?.get(index)!!.percentage}%)"
         }
         popupView.findViewById<TextView>(R.id.textViewPopupText).text = popupText
 
